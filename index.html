@@ -33,10 +33,12 @@
     }
     .hero {
       text-align: center;
-      padding: 120px 20px;
+      padding: 150px 20px;
       animation: fadeIn 1.5s ease;
+      position:  relative;
+      overflow:  hidden;
     }
-    .hero img {
+    .hero img 
       width: 250px;
       border-radius: 20px;
       box-shadow: 0 0 30px #ff00ff;
@@ -85,18 +87,29 @@
     }
   </style>
 </head>
-<body><header>
-  <h2>MooncryptoLab</h2>
+<body>
+  
+  <header>
+    <img src="assests/moon-girl.jpg" alt="logo" style="width:55px; border-radius:50%; box-shadow:0 0  15px #ff00ff;" />
   <nav>
     <a href="#services">Services</a>
     <a href="#pow">Proof of Work</a>
     <a href="#contact">Contact</a>
   </nav>
-</header><section class="hero">
+</header>
+  
+  <section class="hero">
   <img src="assets/moon-girl.jpg" alt="Moon Art" />
   <h1>Marketing Beyond the Ordinary</h1>
   <p>Your crypto growth engine. Fast. Clean. Proven.</p>
-</section><section id="services" class="section">
+  <div class="hero-bg" style="positon:absolute; top:0; left:0; width:100%; height:100%; background:url('assest/moon-girl.jpg') center/cover no-repect; opacity:0.18; filter:blur(4px);"></div>
+
+  <img src="assests/moon-girl.jpg" alt="moon Art" />
+  <hi>Marketing Beyong the Ordinary</hi>
+  <p>Your crypto growth engine. Fast. Clean. Proven.</p>
+  </section>
+  
+  <section id="services" class="section">
   <h2>Our Services</h2>
   <ul>
     <li>KOL Growth & Management</li>
@@ -104,7 +117,11 @@
     <li>Twitter / TG Boosting</li>
     <li>Exchange Listing Support</li>
     <li>Campaign Planning</li>
-  </ul>
+    <li>We connect your project to top-tier voices and crypto influencers for maximum exposure</li>
+    <li>We postion your project with a powerful identity that stands out in the market</li>
+    <li>web3 wallet listing and trending</li>
+  </li>We build loyal and engaged communities and that support long-term project success</li>
+      </ul>
 </section><section id="logos" class="section">
   <h2>Partner Logos / Featured Work</h2>
   <div class="logos">
