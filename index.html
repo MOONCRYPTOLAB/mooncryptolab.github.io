@@ -2,153 +2,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MoonCryptoLab — Marketing & Listing Lab</title>  <style>
+  <title>MoonCryptoLab — Marketing Lab</title>  <style>
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
       background: #080b15;
-      color: #e0e4ff;
+      color: #e0e4ef;
     }
 
     header {
-      background: url('https://i.<img src="images/moon.jpeg' )center/cover no-repeat;
-      height: 60vh;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      padding: 20px;
-    }
-
-    header h1 {
-      font-size: 3.5rem;
-      text-shadow: 0 0 20px rgba(0,0,0,0.7);
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section h2 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      color: #7f8cff;
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #0e1325;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
+      padding: 20px 40px;
+      background: rgba(10, 15, 25, 0.9);
+      position: fixed;
       width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      color: #00eaff;
+      margin: 0;
+    }
+    header nav a {
+      color: #a0a8c0;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    header nav a:hover {
+      color: #00eaff;
     }
 
-    .cta {
-      background: #101632;
-      padding: 40px;
+    .hero {
+      padding: 160px 40px 120px;
       text-align: center;
-      border-radius: 18px;
+      background: linear-gradient(135deg, #0f1624, #09101d, #05080f);
+      background-size: 400% 400%;
+      animation: bgAnim 15s ease infinite;
+    }
+    @keyframes bgAnim {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 0%; }
+    }
+    .hero h2 {
+      font-size: 48px;
+      background: linear-gradient(to right, #00eaff, #4da8ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+      color: #b0bcd8;
+    }
+    .hero .cta {
       margin-top: 30px;
+      padding: 12px 28px;
+      background: #00eaff;
+      color: #050e18;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 0 14px #00eaff;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+    .hero .cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 22px #15f0ff;
     }
 
-    .cta h3 {
-      color: #9aa8ff;
-      font-size: 1.8rem;
+    .section-title {
+      text-align: center;
+      color: #00eaff;
+      font-size: 32px;
+      margin-bottom: 20px;
+      margin-top: 80px;
     }
 
-    .cta button {
-      margin-top: 15px;
-      background: #6d79ff;
-      color: #fff;
-      padding: 14px 28px;
-      border: none;
+    /* ABOUT */
+    .about {
+      padding: 40px 40px 80px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    .about p {
+      color: #b8c2df;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* SERVICES */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+    .service-card {
+      background: #0f1626;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #1b2538;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 18px #00eaff;
+      border-color: #00eaff;
+    }
+    .service-card h4 {
+      color: #00eaff;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      color: #b8c2df;
+      font-size: 15px;
+    }
+
+    /* PROOF OF WORK GALLERY */
+    .gallery {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: #0f1626;
+      border: 1px solid #1b2538;
       border-radius: 10px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: 0.2s;
+      padding: 15px;
+      text-align: center;
+      color: #b8c2df;
+    }
+    .gallery-item img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
 
-    .cta button:hover {
-      background: #8993ff;
+    /* CONTACT */
+    .contact {
+      padding: 40px 40px 100px;
+      text-align: center;
+    }
+    .social-links a {
+      color: #00eaff;
+      font-size: 18px;
+      margin: 0 15px;
+      text-decoration: none;
     }
 
-  </style></head>
-<body><header>
-  <h1>We Don’t Promote Projects — We Make Them Successful.</h1>
-</header><section class="section">
-  <h2>Why MoonCryptoLab?</h2>
-  <div class="grid"><div class="card">
-  <img src="https://i.imgur.com/W5knYtg.jpeg" alt="CEX Listings" />
-  <h3>CEX Listings</h3>
-  <p>We connect your project with top-tier exchanges to maximize visibility, trust, and investor reach.</p>
-</div>
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #61708e;
+      background: #05070d;
+      border-top: 1px solid #1b2538;
+    }
+  </style></head><body>  <header>
+    <h1>MoonCryptoLab</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#proof">Proof of Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>  <div class="hero">
+    <h2>MoonCryptoLab — Web3 Marketing Lab</h2>
+    <p>We help crypto brands grow with strategic marketing, content, and KOL-powered amplification.</p>
+    <a href="#services" class="cta">Our Services</a>
+  </div>  <!-- ABOUT -->  <h3 id="about" class="section-title">About Us</h3>
+  <div class="about">
+    <p>
+      MoonCryptoLab is a Web3-focused marketing lab dedicated to growing crypto startups,
+      influencers, and blockchain projects. We use strategic content, social amplification,
+      research insights, and community growth frameworks to push brands into the spotlight.
+    </p>
+  </div>  <!-- SERVICES -->  <h3 id="services" class="section-title">Services</h3>
+  <div class="service-grid">
+    <div class="service-card">
+      <h4>KOL & Influencer Marketing</h4>
+      <p>We connect your project with top-tier crypto voices to maximize brand visibility.</p>
+    </div>
+    <div class="service-card">
+      <h4>Social Media Growth</h4>
+      <p>End-to-end content strategy, daily posting, research-backed engagement boosting.</p>
+    </div>
+    <div class="service-card">
+      <h4>Brand Story & Narrative</h4>
+      <p>Create a memorable identity and message that sticks with your audience.</p>
+    </div>
+    <div class="service-card">
+      <h4>Graphic & Media Production</h4>
+      <p>High-quality visuals, posters, carousels, and memes tailored for Web3 culture.</p>
+    </div>
+    <div class="service-card">
+      <h4>Community Awareness Boost</h4>
+      <p>We push your brand into active Web3 spaces, groups, and trending discussions.</p>
+    </div>
+  </div>  <!-- PROOF OF WORK GALLERY -->  <h3 id="proof" class="section-title">Proof of Work</h3>
+  <div class="about" style="max-width:800px; margin:auto; text-align:center;">
+    <p>Below are links to our proof‑of‑work documents, campaigns, results, and client references.</p
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/187" style="color:#00eaff; text-decoration:none;">Proof 1</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/742" style="color:#00eaff; text-decoration:none;">Proof 2</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/748" style="color:#00eaff; text-decoration:none;">Proof 3</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/744" style="color:#00eaff; text-decoration:none;">Proof 4</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/400" style="color:#00eaff; text-decoration:none;">Proof 5</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/397" style="color:#00eaff; text-decoration:none;">Proof 6</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/741" style="color:#00eaff; text-decoration:none;">Proof 7</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/739" style="color:#00eaff; text-decoration:none;">Proof 8</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/801" style="color:#00eaff; text-decoration:none;">Proof 9</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/429" style="color:#00eaff; text-decoration:none;">Proof 10</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/86" style="color:#00eaff; text-decoration:none;">Proof 11</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/206" style="color:#00eaff; text-decoration:none;">Proof 12</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/205" style="color:#00eaff; text-decoration:none;">Proof 13</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/198" style="color:#00eaff; text-decoration:none;">Proof 14</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/212" style="color:#00eaff; text-decoration:none;">Proof 15</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/389" style="color:#00eaff; text-decoration:none;">Proof 16</a></li>
+  <li style="margin-bottom:15px;"><a href="https://t.me/MOONCYRPTO_LAB/619" style="color:#00eaff; text-decoration:none;">Proof 17</a></li>
+</ul>
 
-<div class="card">
-  <img src="https://i.imgur.com/https://github.com/MOONCRYPTOLAB/mooncryptolab.github.io/blob/main/index.html#:~:text=moon.jpeg" alt="IDO/Launchpad Listings" />
-  <h3>IDO / Launchpad Listings</h3>
-  <p>We secure strategic placements on leading launchpads to give your token a strong market entry.</p>
-</div>
-
-<div class="card">
-  <img src="https://github.com/MOONCRYPTOLAB/mooncryptolab.github.io/blob/main/rats%20image.jpeg?raw=true alt="KOL & Influencer Marketing" />
-  <h3>KOL / Influencer Boost</h3>
-  <p>Access verified crypto influencers that create real buzz, hype, and community expansion.</p>
-</div>
-
-<div class="card">
-  <img src="https://i.imgur.com/yM7AvTS.jpeg" alt="Social Media Growth" />
-  <h3>Social Media Growth</h3>
-  <p>We build your brand presence across X, Telegram, TikTok, Reddit, and YouTube with organic reach.</p>
-</div>
-
-  </div>
-</section><section class="section">
-  <h2>What Makes Us Different?</h2>
-  <div class="grid"><div class="card">
-  <img src="https://i.imgur.com/k7qQzqk.jpeg" alt="Real Results" />
-  <h3>Real Results</h3>
-  <p>Not empty promises — measurable growth, investor traction, and community expansion.</p>
-</div>
-
-<div class="card">
-  <img src="https://i.imgur.com/G4UuCx5.jpeg" alt="Industry Network" />
-  <h3>Industry Network</h3>
-  <p>We work directly with launchpads, exchanges, and top-level KOLs globally.</p>
-</div>
-
-<div class="card">
-  <img src="https://i.imgur.com/nRjVdfD.jpeg" alt="24/7 Support" />
-  <h3>24/7 Strategic Guidance</h3>
-  <p>We guide projects step-by-step to ensure every action leads to real success.</p>
-</div>
-
-  </div>
-</section><section class="section">
-  <div class="cta">
-    <h3>Ready to Take Your Project to the Moon?</h3>
-    <p>Let’s transform your project from just existing — to leading the market.</p>
-    <button>Contact MoonCryptoLab</button>
-  </div>
-</section></body>
+  </div>  <!-- CONTACT -->  <h3 id="contact" class="section-title">Contact Us</h3>
+  <div class="contact">
+    <p>Connect with MoonCryptoLab:</p>
+    <div class="social-links">
+      <a href="https://x.com/MooncryptoLab?t=GPK5a5pVkNr5mvZ7KnJkYw&s=09">Twitter</a>
+      <a href="https://t.me/MOONCYRPTO_LAB">Telegram</a>
+    </div>
+  </div>  <footer>
+    ©️ 2025 MoonCryptoLab — All Rights Reserved.
+  </footer></body>
 </html>
